@@ -1,0 +1,52 @@
+{
+  "_comment": "Example config for the Eiffel Tower area in Paris. Copy to config.json and edit. Pass via: osm2citycad --config config.json",
+
+  "place_name": "Paris, France",
+  "bbox": { "west": 2.2695, "south": 48.8359, "east": 2.3195, "north": 48.8809 },
+
+  "polygon_wkt": "POLYGON((2.2695 48.8359, 2.3195 48.8359, 2.3195 48.8809, 2.2695 48.8809, 2.2695 48.8359))",
+
+  "target_crs": "EPSG:32631",
+
+  "output_dir": ".",
+  "output_filename": "eiffel_tower_citycad.dxf",
+
+  "layers": {
+    "roads_main": true,
+    "roads_local": true,
+    "buildings": true,
+    "water": true,
+    "rail": true,
+    "parks": true
+  },
+
+  "roads": {
+    "include_service": false,
+    "main_highway_types": [
+      "motorway", "motorway_link",
+      "trunk", "trunk_link",
+      "primary", "primary_link",
+      "secondary", "secondary_link"
+    ],
+    "local_highway_types": [
+      "tertiary", "tertiary_link",
+      "residential", "living_street",
+      "unclassified", "road"
+    ],
+    "service_highway_types": ["service", "track"]
+  },
+
+  "simplify_tolerance_meters": 2.0,
+
+  "translate_to_local_origin": true,
+  "local_origin_subtract_meters": [452000, 5411000],
+
+  "dxf_version": "R2010",
+
+  "use_osmnx_cache": true,
+
+  "overpass_url": "https://z.overpass-api.de/api",
+
+  "overpass_timeout_seconds": 300,
+  "overpass_memory_gb": 2
+}
